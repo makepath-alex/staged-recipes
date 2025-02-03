@@ -8,8 +8,8 @@ package:
 
 source:
   # TODO: Set `makepath-cmake` to {{ version }} when we have real version
-  url: https://github.com/earth-system-radiation/rte-rrtmgp/archive/refs/tags/v1.9-alpha1.zip
-  sha256: c323e8a703818e705d69fc75ff3d37975496c72b9b865f6933b3cb55a22a2a7b
+  url: https://github.com/makepath-alex/rte-rrtmgp/archive/refs/heads/use-cbool-dev.zip
+  sha256: de452672bc7ab6cde7c18e9e6a3a0f012bc1898031bf15aaf66c25125c730a04
 
 build:
   number: 0
@@ -68,14 +68,14 @@ test:
     - test -f $PREFIX/include/rrtmgp_kernels.h                                   # [unix]
     - test -f $PREFIX/include/rte_kernels.h                                      # [unix]
     - test -f $PREFIX/include/rte_types.h                                        # [unix]
-    - test -f $PREFIX/lib/librte.a                                               # [unix]
-    - test -f $PREFIX/lib/librrtmgp.a                                            # [unix]
+    - test -f $PREFIX/lib/librte.so                                              # [unix]
+    - test -f $PREFIX/lib/librrtmgp.so                                           # [unix]
     # Win (we build with mingw, so it generates .a files)
     - if exist "%PREFIX%\include\rrtmgp_kernels.h" (exit /b 0) else (exit /b 1)  # [win]
     - if exist "%PREFIX%\include\rte_kernels.h" (exit /b 0) else (exit /b 1)     # [win]
     - if exist "%PREFIX%\include\rte_types.h" (exit /b 0) else (exit /b 1)       # [win]
-    - if exist "%PREFIX%\lib\librte.a" (exit /b 0) else (exit /b 1)              # [win]
-    - if exist "%PREFIX%\lib\librrtmgp.a" (exit /b 0) else (exit /b 1)           # [win]
+    - if exist "%PREFIX%\lib\librte.so" (exit /b 0) else (exit /b 1)             # [win]
+    - if exist "%PREFIX%\lib\librrtmgp.so" (exit /b 0) else (exit /b 1)          # [win]
 
 about:
   home: https://github.com/earth-system-radiation/rte-rrtmgp
